@@ -1,13 +1,18 @@
-from email.policy import EmailPolicy
 import pandas as pd
 import streamlit as st
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 from PIL import Image
 import pickle
 import joblib
+
+#차트 한글 깨짐 현상
+import matplotlib.font_manager as fm
+plt.rcParams['font.family'] = 'Malgun Gothic'
+
+
 
 def main() :
     df = pd.read_csv('data/stroke.csv')
@@ -80,16 +85,26 @@ def main() :
     new_data = np.array([gender,age,hyper_tension,heart_disease,ever_married,avg_glucose_level,bmi,smoked_status])
     new_data = new_data.reshape(1,8)
     X = scaler_M.transform(new_data)
-    
-    
-   
-    
+       
     y_pred = classifier.predict(X)
-    if y_pred == 0 :
-        st.subheader('뇌졸증 아닙니다')
-    else :
-        st.subheader('뇌졸증 위험입니다')
-  
 
+  
+    
+    col3, col4 = st.columns(2)
+    with col3 :
+        
+        if y_pred == 0 :
+            st.subheader('뇌졸증 안전 범위입니다.')
+        else :
+            st.subheader('뇌졸증 위험 범위입니다')
+    with col4 :
+        fig1 =  plt.figure()
+        sns.distplot(df[df['stroke'] == 0]["age"], color='green') # No Stroke - green
+        sns.distplot(df[df['stroke'] == 1]["age"], color='red') # Stroke - Red
+
+        plt.title('나이에 따른 뇌졸증 추이', fontsize=15)
+        plt.xlim([18,100])
+        st.pyplot(fig1)
+    
 if __name__ == '__main__' :
     main()
