@@ -11,11 +11,13 @@ import joblib
 #차트 한글 깨짐 현상
 import matplotlib.font_manager as fm
 plt.rcParams['font.family'] = 'Malgun Gothic'
-
-
+base="dark"
+primaryColor="purple"
 
 def main() :
     df = pd.read_csv('data/stroke.csv')
+    logo = Image.open('data/logo.png',)
+    st.sidebar.image(logo,width=100)
 
     add_selectbox = st.sidebar.subheader('뇌졸증 예측 프로그램')
 
@@ -57,9 +59,9 @@ def main() :
 
 
         avg_glucose_level = st.number_input('''혈당 수치를 입력해주세요.''')
-        if avg_glucose_level == 0 :
+        if st.checkbox('혈당수치를 모를때에는 체크',value=False)==True :
             avg_glucose_level = df['avg_glucose_level'].mean()
-        st.text('본인의 혈당수치를 모를때에는 비워두세요.')
+        
         
 
         bmi = st.number_input('BMI 수치를 입력해주세요',15,35,22)
@@ -97,6 +99,7 @@ def main() :
             st.subheader('뇌졸증 안전 범위입니다.')
         else :
             st.subheader('뇌졸증 위험 범위입니다')
+
     with col4 :
         fig1 =  plt.figure()
         sns.distplot(df[df['stroke'] == 0]["age"], color='green') # No Stroke - green
