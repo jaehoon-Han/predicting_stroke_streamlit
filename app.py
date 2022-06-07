@@ -7,19 +7,21 @@ import os
 from PIL import Image
 import pickle
 import joblib
+from run_df import run_df
 
 #차트 한글 깨짐 현상
 import matplotlib.font_manager as fm
 plt.rcParams['font.family'] = 'Malgun Gothic'
+st.set_page_config(layout="wide")
+
 base="dark"
 primaryColor="purple"
 
 def main() :
     df = pd.read_csv('data/stroke.csv')
-    logo = Image.open('data/logo.png',)
-    st.sidebar.image(logo,width=100)
+    
 
-    add_selectbox = st.sidebar.subheader('뇌졸증 예측 프로그램')
+    add_selectbox = st.sidebar.title('뇌졸증 예측해보기 👨‍⚕‍')
 
   
     with st.sidebar :
@@ -60,7 +62,7 @@ def main() :
 
         avg_glucose_level = st.number_input('''혈당 수치를 입력해주세요.''')
         if st.checkbox('혈당수치를 모를때에는 체크',value=False)==True :
-            avg_glucose_level = df['avg_glucose_level'].mean()
+            avg_glucose_level = (df['avg_glucose_level'].mean())-20
         
         
 
@@ -90,24 +92,21 @@ def main() :
        
     y_pred = classifier.predict(X)
 
-  
+  ### 본문 내용 ###
     
-    col3, col4 = st.columns(2)
-    with col3 :
+    st.title('📊EDA + Prediction📈 ')
+    st.image('https://healthjournal.uconn.edu/wp-content/uploads/sites/1391/2017/10/featured_brain.jpg')
+
+    if y_pred == 0 :
+        st.subheader('뇌졸증 안전 범위입니다.')
+    else :
+        st.subheader('뇌졸증 위험 범위입니다')
+
+
+    
+    run_df()
         
-        if y_pred == 0 :
-            st.subheader('뇌졸증 안전 범위입니다.')
-        else :
-            st.subheader('뇌졸증 위험 범위입니다')
-
-    with col4 :
-        fig1 =  plt.figure()
-        sns.distplot(df[df['stroke'] == 0]["age"], color='green') # No Stroke - green
-        sns.distplot(df[df['stroke'] == 1]["age"], color='red') # Stroke - Red
-
-        plt.title('나이에 따른 뇌졸증 추이', fontsize=15)
-        plt.xlim([18,100])
-        st.pyplot(fig1)
     
+        
 if __name__ == '__main__' :
     main()
