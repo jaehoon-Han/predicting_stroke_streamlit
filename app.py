@@ -1,3 +1,4 @@
+from email.policy import EmailPolicy
 import pandas as pd
 import streamlit as st
 import numpy as np
@@ -11,48 +12,84 @@ import joblib
 def main() :
     df = pd.read_csv('data/stroke.csv')
 
-    add_selectbox = st.sidebar.selectbox(
-        'how would',
-        ('test','test2','test3')
-    )
+    add_selectbox = st.sidebar.subheader('뇌졸증 예측 프로그램')
 
+  
     with st.sidebar :
+        gender = st.radio('성별을 선택하세요',  ('남자', '여자') )
+        if gender == '남자' :
+            gender = 1
+        elif gender =='여자' :
+            gender = 0
+
+
+        age = st.slider('나이를 입력하세요.',1,100, 29)
+        
+
         col1, col2 = st.columns(2)
-        with col1 : st.button('button test 1')
-        with col2 : st.button('button test 2')
+
+        with col1 : hyper_tension = st.checkbox('고혈압',value= False)
+        if hyper_tension ==True :
+            hyper_tension = 1
+        elif hyper_tension == False :
+            hyper_tension = 0
+            
 
 
-    with st.sidebar :
-        add_radio = st.radio(
-            '성별을 선택하세요',
-            ('남자', '여자')
-        )
-        age = st.slider('slider test',10,100)
+        with col2 : heart_disease = st.checkbox('심장 질환',value = False)
+        if heart_disease == True :
+            heart_disease = 1
+        elif heart_disease == False :
+            heart_disease = 0
+       
+        
 
-        st.checkbox('test checkbox',value= False)
+        ever_married = st.radio('결혼 유무',('O','X'))
+        if ever_married == 'O' : 
+            ever_married = 1
+        elif ever_married == 'X' :
+            ever_married = 0
 
+
+        avg_glucose_level = st.number_input('''혈당 수치를 입력해주세요.''')
+        if avg_glucose_level == 0 :
+            avg_glucose_level = df['avg_glucose_level'].mean()
+        st.text('본인의 혈당수치를 모를때에는 비워두세요.')
+        
+
+        bmi = st.number_input('BMI 수치를 입력해주세요',15,35,22)
+
+
+        smoked_status = st.selectbox('흡연 유무', ['없음','흡연 중'])
+        if smoked_status == '없음' :
+            smoked_status = 0
+        else :
+            smoked_status = 1
+
+            
     with st.sidebar :
         
-        st.text('''17.3 Copyright @ 2022
-Delta Dental of NJ and CT, Inc.''')
-        
-    st.title('뇌졸증 예측')
+        st.text('17.3 Copyright @ 2022 \nDelta Dental of NJ and CT, Inc.')
+               
+  
+
+    classifier = joblib.load('data/classifier1.pkl')
+    scaler_M = joblib.load('data/scaler_M.pkl')
+   
+
+    new_data = np.array([gender,age,hyper_tension,heart_disease,ever_married,avg_glucose_level,bmi,smoked_status])
+    new_data = new_data.reshape(1,8)
+    X = scaler_M.transform(new_data)
     
-    st.dataframe(df)
     
+   
+    
+    y_pred = classifier.predict(X)
+    if y_pred == 0 :
+        st.subheader('뇌졸증 아닙니다')
+    else :
+        st.subheader('뇌졸증 위험입니다')
+  
 
-    classifier = joblib.load('data/classifier.pkl')
-    encoder = joblib.load('data/encoder_label.pkl')
-
-    st.subheader('와우,와우')
-    new_data = st.text_input('입력하세요')
-    new_data = np.array([new_data])
-   ## new_data = np.array([스트림릿에서 입력받는거])
-    X_new = encoder.transform(new_data)
-    X_new = X_new.toarray()
-    y_pred = classifier.predict(X_new)
-
-
-## 'gender',	'age'	,'hypertension'	,'heart_disease',	'ever_married',	'avg_glucose_level',	'bmi'	,'smoking_status_0',	'smoking_status_1',	'smoking_status_2',	'smoking_status_3'
 if __name__ == '__main__' :
     main()
