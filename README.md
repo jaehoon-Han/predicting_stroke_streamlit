@@ -66,14 +66,13 @@
     - 전처리
         - 각 컬럼별 NaN 값 확인 후 평균값으로 대체
 
-             ![Untitled (1)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpRFSf%2FbtrEdaw0HVz%2FFiYhOKiXhaWt733ZK3l6d1%2Fimg.png)
-![Untitled (2)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtClCA%2FbtrEfDSQiB4%2FaOpi9emL9T5XoeEO5lGTKK%2Fimg.png)
 
 
         - Label Encoder를 통해 문자열 데이터를 숫자로 변환
         - MinMax Scaler를 사용해 숫자의 범위를 조정
               
         - 성능 비교
+        
             - 다양한 모델 중 성능이 가장 뛰어난 MultinomialNB 모델을 사용
  ![Untitled (1)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FLbxxg%2FbtrD8jIvcAW%2FGR19JUsdKfK5Ctvsr0Yky1%2Fimg.png)
 
