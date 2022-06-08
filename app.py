@@ -99,7 +99,7 @@ def main() :
                 st.subheader('뇌졸증 위험 범위입니다')
 
         st.write('17.3 Copyright @ 2022 \nDelta Dental of NJ and CT, Inc.')
-  ### 본문 내용 ###
+  ######### 본문 내용 #######
     
     st.title('EDA + Prediction ')
     st.image('https://healthjournal.uconn.edu/wp-content/uploads/sites/1391/2017/10/featured_brain.jpg')
@@ -109,7 +109,7 @@ def main() :
         with col3 :
             st.write('👨‍⚕   5110 patient')
         with col4 :
-            st.write('📈   12 columns')
+            st.write('📌   12 Comparison target')
         with col5 :
             st.write('📊   3  chart')
     

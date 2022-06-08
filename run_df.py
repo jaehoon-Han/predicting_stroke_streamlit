@@ -31,49 +31,12 @@ from sklearn.preprocessing import (StandardScaler,
                                    LabelEncoder,
                                    OneHotEncoder)
 from sklearn import metrics
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import (accuracy_score, 
-                             auc, 
-                             precision_score,
-                             recall_score,
-                             f1_score, 
-                             roc_auc_score,
-                             confusion_matrix)
-from sklearn.model_selection import (GridSearchCV,
-                                     StratifiedKFold,
-                                     cross_val_score)
 
 
-# dimensionality reduction
-from sklearn.decomposition import PCA
 
 import pylab as pl
 
-# imbalance dataset handling
 
-from imblearn.datasets import make_imbalance
-from imblearn.under_sampling import (RandomUnderSampler, 
-                                     ClusterCentroids,
-                                     TomekLinks,
-                                     NeighbourhoodCleaningRule,
-                                     EditedNearestNeighbours,
-                                     NearMiss)
-
-
-from imblearn.over_sampling import (SMOTE,
-                                    ADASYN)
-
-
-
-
-# model algorithams
-from sklearn.ensemble import (RandomForestClassifier, 
-                              AdaBoostClassifier, 
-                              GradientBoostingClassifier)
-from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
 
 
 def run_df() :
