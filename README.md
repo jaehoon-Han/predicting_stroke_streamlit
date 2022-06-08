@@ -49,6 +49,10 @@
         ![Untitled (1)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fts8ml%2FbtrEgwzaOTD%2FuUkm3Pxy72NmKiYrVTwgo0%2Fimg.png)
 
   
+2. **Machine Learning**
+    - Classifier 예측
+        ![Untitled (1)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fts8ml%2FbtrEgwzaOTD%2FuUkm3Pxy72NmKiYrVTwgo0%2Fimg.png)
+
        
   - 
 
@@ -73,3 +77,7 @@
 
 ### Connect URL
 http://ec2-3-35-49-86.ap-northeast-2.compute.amazonaws.com:8503/
+
+### DataSet
+Stroke Prediction Dataset
+https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset/code
