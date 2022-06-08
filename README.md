@@ -49,7 +49,7 @@
   
 2. **Machine Learning**
     - Classifier 예측
-        ![Untitled (1)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fts8ml%2FbtrEgwzaOTD%2FuUkm3Pxy72NmKiYrVTwgo0%2Fimg.png)
+        ![Untitled (2)]([https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fts8ml%2FbtrEgwzaOTD%2FuUkm3Pxy72NmKiYrVTwgo0%2Fimg.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcFjYma%2FbtrEiIlB6eh%2FwPdwJ24oU1NYaVM0jyYXy1%2Fimg.png))
 
        
   - 
