@@ -62,7 +62,7 @@ def main() :
 
         avg_glucose_level = st.number_input('''혈당 수치를 입력해주세요.''')
         if st.checkbox('혈당수치를 모를때에는 체크',value=False)==True :
-            avg_glucose_level = (df['avg_glucose_level'].mean())-20
+            avg_glucose_level = (df['avg_glucose_level'].mean())
         
         
 
@@ -79,11 +79,7 @@ def main() :
         else :
             smoked_status = 1
 
-            
-    
-
-               
-  
+        
 
     classifier = joblib.load('data/classifier1.pkl')
     scaler_M = joblib.load('data/scaler_M.pkl')
@@ -98,8 +94,10 @@ def main() :
         if st.button('예측 실행') :
             if y_pred == 0 :
                 st.subheader('뇌졸증 안전 범위입니다.')
+                
             else :
                 st.subheader('뇌졸증 위험 범위입니다')
+
         st.write('17.3 Copyright @ 2022 \nDelta Dental of NJ and CT, Inc.')
   ### 본문 내용 ###
     
@@ -113,7 +111,7 @@ def main() :
         with col4 :
             st.write('📈   12 columns')
         with col5 :
-            st.write('📊   4 corr chart')
+            st.write('📊   3  chart')
     
     
 
