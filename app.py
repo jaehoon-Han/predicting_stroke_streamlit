@@ -98,13 +98,15 @@ def main() :
             else :
                 st.subheader('뇌졸증 위험 범위입니다')
 
-        st.write('17.3 Copyright @ 2022 \nDelta Dental of NJ and CT, Inc.')
+        st.write('''17.3 License
+        Data files © Original Authors   👨‍⚕FEDESORIANO 
+       ''')
   ######### 본문 내용 #######
     
     st.title('EDA + Prediction ')
     st.image('https://healthjournal.uconn.edu/wp-content/uploads/sites/1391/2017/10/featured_brain.jpg')
     with st.container() :
-        st.write('세계보건기구(WHO)에 따르면 뇌졸중은 전 세계 사망 원인 2위이며, 전체 사망의 약 11%를 차지한다. 이 데이터는 성별, 나이, 다양한 질병 및 흡연 상태와 같은 변수를 기반으로 환자가 뇌졸중에 걸릴 가능성을 예측하는 데 사용됩니다. 데이터의 각 행은 환자에 대한 관련 정보를 제공합니다. 뇌졸중을 예측하기 위한 총 11개의 임상 기능이 있습니다.')
+        st.write('세계보건기구(WHO)에 따르면 뇌졸중은 전 세계 사망 원인 2위이며, 전체 사망의 약 11%를 차지한다.\n이 데이터는 성별, 나이, 다양한 질병 및 흡연 상태와 같은 변수를 기반으로 환자가 뇌졸중에 걸릴 가능성을 예측하는 데 사용됩니다.\n데이터의 각 행은 환자에 대한 관련 정보를 제공하며 뇌졸중을 예측하기 위한 총 11개의 임상 기능이 있습니다.')
         col3, col4, col5= st.columns(3)
         with col3 :
             st.write('👨‍⚕   5110 patient')
