@@ -77,6 +77,7 @@ from sklearn.svm import SVC
 
 
 def run_df() :
+    
     df = pd.read_csv('data/stroke.csv')
     fig = plt.figure(figsize=(20,20))
     gs = fig.add_gridspec(3,4)
@@ -91,6 +92,9 @@ def run_df() :
     ax7 = fig.add_subplot(gs[0,3])
 
     background_color = "#1b1d21"
+    COLOR = 'white'
+    plt.rcParams['xtick.color'] = COLOR
+    plt.rcParams['ytick.color'] = COLOR
 
     fig.patch.set_facecolor(background_color) 
     ax0.set_facecolor(background_color) 
@@ -120,6 +124,7 @@ def run_df() :
 
     ax1.grid(color='#ffffff', linestyle=':', axis='y', zorder=0,  dashes=(1,5))
     sns.countplot(ax=ax1, data=df, x='gender',palette = 'Reds', hue='stroke',edgecolor='black')
+   
     ax1.set_xlabel("gender",fontsize=14, fontweight='bold', fontfamily='serif', color="#ffffff")
     ax1.set_ylabel("",fontsize=14, fontweight='bold', fontfamily='serif', color="#ffffff")
 
@@ -198,7 +203,7 @@ def run_df() :
     ax4 = fig2.add_subplot(gs[2,0])
     ax5 = fig2.add_subplot(gs[2,1])
 
-    background_color = "#ffe6e6"
+    background_color = "#1b1d21"
     fig2.patch.set_facecolor(background_color) 
     ax0.set_facecolor(background_color) 
     ax1.set_facecolor(background_color) 
@@ -214,7 +219,7 @@ def run_df() :
             fontsize = 18,
             fontweight='bold',
             fontfamily='serif',
-            color='#000000')
+            color='#ffffff')
     ax0.spines["bottom"].set_visible(False)
     ax0.set_xticklabels([])
     ax0.set_yticklabels([])
@@ -222,7 +227,7 @@ def run_df() :
 
     # Age
     ax1.grid(color='#000000', linestyle=':', axis='y', zorder=0,  dashes=(1,5))
-    sns.kdeplot(ax=ax1, data=df, x='age',hue="stroke", fill=True,palette="YlOrBr", alpha=.5, linewidth=0)
+    sns.kdeplot(ax=ax1, data=df, x='age',hue="stroke", fill=True,palette="Reds", alpha=.5, linewidth=0)
     ax1.set_xlabel("")
     ax1.set_ylabel("")
 
@@ -233,7 +238,7 @@ def run_df() :
             fontsize = 18,
             fontweight='bold',
             fontfamily='serif',
-            color='#000000')
+            color='#ffffff')
     ax2.spines["bottom"].set_visible(False)
     ax2.set_xticklabels([])
     ax2.set_yticklabels([])
@@ -241,7 +246,7 @@ def run_df() :
 
     # bmi
     ax3.grid(color='#000000', linestyle=':', axis='y', zorder=0,  dashes=(1,5))
-    sns.kdeplot(ax=ax3, data=df, x='bmi',hue="stroke", fill=True,palette="YlOrBr", alpha=.5, linewidth=0)
+    sns.kdeplot(ax=ax3, data=df, x='bmi',hue="stroke", fill=True,palette="Reds", alpha=.5, linewidth=0)
     ax3.set_xlabel("")
     ax3.set_ylabel("")
 
@@ -252,7 +257,7 @@ def run_df() :
             fontsize = 18,
             fontweight='bold',
             fontfamily='serif',
-            color='#000000')
+            color='#ffffff')
     ax4.spines["bottom"].set_visible(False)
     ax4.set_xticklabels([])
     ax4.set_yticklabels([])
@@ -260,7 +265,7 @@ def run_df() :
 
     # avg_glucose_level
     ax5.grid(color='#000000', linestyle=':', axis='y', zorder=0,  dashes=(1,5))
-    sns.kdeplot(ax=ax5, data=df, x='avg_glucose_level',hue="stroke", fill=True,palette="YlOrBr", alpha=.5, linewidth=0)
+    sns.kdeplot(ax=ax5, data=df, x='avg_glucose_level',hue="stroke", fill=True,palette="Reds", alpha=.5, linewidth=0)
     ax5.set_xlabel("")
     ax5.set_ylabel("")
 
@@ -274,3 +279,42 @@ def run_df() :
         ax4.spines[i].set_visible(False)
         ax5.spines[i].set_visible(False)
     st.pyplot(fig2)
+
+    fig3 = plt.figure(figsize=(35,25))
+    gs = fig3.add_gridspec(3,4)
+    gs.update(wspace=0.3, hspace=0.15)
+    ax0 = fig3.add_subplot(gs[0,0])
+    ax1 = fig3.add_subplot(gs[0,1])
+
+    background_color = "#1b1d21"
+
+    fig3.patch.set_facecolor(background_color) 
+    ax0.set_facecolor(background_color) 
+    ax1.set_facecolor(background_color) 
+
+    # Title of the plot
+    ax0.text(0.5,0.5,"Correlation Heatmap\n___________",
+            horizontalalignment = 'center',
+            verticalalignment = 'center',
+            fontsize = 16,
+            fontweight='bold',
+            fontfamily='serif',
+            color='#ffffff')
+
+    ax0.set_xticklabels([])
+    ax0.set_yticklabels([])
+    ax0.tick_params(left=False, bottom=False)
+
+    ax1.grid(color='#000000', linestyle=':', axis='y', zorder=0,  dashes=(1,5))
+    sns.heatmap(df.corr(), vmin=-1, vmax=1, annot=True, cmap='BrBG')
+
+    ax0.spines["top"].set_visible(False)
+    ax0.spines["left"].set_visible(False)
+    ax0.spines["bottom"].set_visible(False)
+    ax0.spines["right"].set_visible(False)
+
+    ax1.spines["top"].set_visible(False)
+    ax1.spines["left"].set_visible(False)
+    ax1.spines["right"].set_visible(False)
+    st.pyplot(fig3)
+
