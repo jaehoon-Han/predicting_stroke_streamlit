@@ -44,15 +44,19 @@
 
 1. **EDA**
     - 데이터셋 구성
+
+
         ![Untitled (1)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fts8ml%2FbtrEgwzaOTD%2FuUkm3Pxy72NmKiYrVTwgo0%2Fimg.png)
 
   
 2. **Machine Learning**
     - Classifier 예측
-        ![Untitled (2)](https://blog.kakaocdn.net/dn/cFjYma/btrEiIlB6eh/wPdwJ24oU1NYaVM0jyYXy1/img.png))
+
+
+        ![Untitled (2)](https://blog.kakaocdn.net/dn/cFjYma/btrEiIlB6eh/wPdwJ24oU1NYaVM0jyYXy1/img.png)
 
        
-  - 
+  
 
 
  
