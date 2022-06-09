@@ -76,9 +76,6 @@
  
     
 
-1. **인공지능 사용**
-        
-   - GridSearchCV를 사용하여 다양한 모델 중 성능이 가장 뛰어난 MultinomialNB 모델을 채택
 
 ### ○  URL 주소
 http://ec2-3-35-49-86.ap-northeast-2.compute.amazonaws.com:8503/
