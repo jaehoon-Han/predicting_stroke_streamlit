@@ -133,6 +133,16 @@ def run_df() :
     ax7.spines["left"].set_visible(False)
     ax7.spines["right"].set_visible(False)
     st.pyplot(fig)
+
+    with st.expander('📊컬럼별 상세정보'):
+            st.write('gender = 성별')
+            st.write('hypertension = 고혈압 [ 0 = 정상 혈압, 1 = 고혈압 ]')
+            st.write('smoking status = 흡연 유무')
+            st.write('work type = 근무 환경')
+            st.write('heart disease = 심장 질환 [ 0 = 정상, 1 = 과거병력이 있거나, 현재 질환을 갖고있는 경우 ]')
+            st.write('ever married = 결혼 유무')
+            st.write('Residence type = 주거 환경')
+            
     #st.write('''EDA의 통찰력:
         #다른 성별 유형에서 뇌졸중 환자가 한 명도 없는 반면, 여성과 남성 모두 뇌졸중 환자 수가 같다. \n
         #개인 직업을 가진 환자는 자영업자 및 정부 직업보다 더 많은 수의 뇌졸중 환자가 있다. \n
