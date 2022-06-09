@@ -26,8 +26,15 @@
     - 개발툴 : vscode, jupyter notebook
     - 협업툴 : Git, putty, streamlit
     - 
-- ** 사용된 라이브러리 **
-    -
+-  사용된 라이브러리 
+    - pandas
+    - streamlit
+    - numpy
+    - matplolib.pyplot
+    - seaborn
+    - joblib
+    - warning
+    - sklearn
 
 
 
