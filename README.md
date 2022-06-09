@@ -87,10 +87,10 @@
             - 다양한 모델 중 성능이 가장 뛰어난 MultinomialNB 모델을 사용
  ![Untitled (1)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FLbxxg%2FbtrD8jIvcAW%2FGR19JUsdKfK5Ctvsr0Yky1%2Fimg.png)
 
-### Connect URL
+### ○  URL 주소
 http://ec2-3-35-49-86.ap-northeast-2.compute.amazonaws.com:8503/
 
-### DataSet
+### ○ DataSet
 Stroke Prediction Dataset
 
 https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset/code
