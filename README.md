@@ -13,7 +13,10 @@
         - EDA
             - Jupyter Notebook을 이용하여 데이터 특성 분석
         - Data Processing
+            - NaN 값 파악 후 컬럼별 중요도를 파악한 후, 유의미한 수치를 가진 컬럼은 평균값으로 대체하였으며,
+              그렇지 못한 컬럼은 Drop 후 진행
             - 문자와 숫자값을 preprocessing 하여 인공지능에 활용할수 있게끔 가공
+              (Label Encoder, MinMax
         - Classifier 모델을 사용하여 인공지능 생성
             - 모델 중 정확도가 가장 높게 평가된 모델을 사용( GaussianNB )
         - 데이터의 시각화
@@ -73,16 +76,7 @@
  
     
 
-1. **데이터 처리**
-    - 전처리
-        - 각 컬럼별 NaN 값 확인 후 평균값으로 대체
-
-
-
-        - Label Encoder를 통해 문자열 데이터를 숫자로 변환
-        - MinMax Scaler를 사용해 숫자의 범위를 조정
-              
-        - 성능 비교
+1. **인공지능 사용**
         
             - 다양한 모델 중 성능이 가장 뛰어난 MultinomialNB 모델을 사용
  ![Untitled (1)](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FLbxxg%2FbtrD8jIvcAW%2FGR19JUsdKfK5Ctvsr0Yky1%2Fimg.png)
