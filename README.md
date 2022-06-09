@@ -14,9 +14,9 @@
             - Jupyter Notebook을 이용하여 데이터 특성 분석
         - Data Processing
             - NaN 값 파악 후 컬럼별 중요도를 파악한 후, 유의미한 수치를 가진 컬럼은 평균값으로 대체하였으며,
-              그렇지 못한 컬럼은 Drop 후 진행
+              그렇지 않은 컬럼은 Drop 후 진행
             - 문자와 숫자값을 preprocessing 하여 인공지능에 활용할수 있게끔 가공
-              (Label Encoder, MinMax
+              (Label Encoder, MinMax Scaler)
         - Classifier 모델을 사용하여 인공지능 생성
             - 모델 중 정확도가 가장 높게 평가된 모델을 사용( GaussianNB )
         - 데이터의 시각화
