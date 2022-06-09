@@ -21,7 +21,7 @@
     - 사전 구축된 대규모 데이터를 이용해 인공지능 활용
         
 
-- **활용 장비 및 재료**(개발 환경, 협업 tool 등)
+- **개발 환경, 협업 tool 등**
     - 서버환경 : Python 3.7.13
     - 개발툴 : vscode, jupyter notebook
     - 협업툴 : Git, putty, streamlit
