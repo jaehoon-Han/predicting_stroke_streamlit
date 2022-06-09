@@ -36,7 +36,7 @@
     
     - EDA : Jupyter Notebook을 이용하여 데이터 특성 및 이상치 분석
     - Data Processing : 모델 학습에 유용한 형태로 데이터를 처리
-    - Modeling : 모델을 구현하고 성능 향상을 위해 Parameter Tunning 및 다양한 기능 추가
+    - Modeling : 모델을 구현하고 성능 향상을 위해 Parameter Tunning 및 GridSearchCV 사용
    
 
 
