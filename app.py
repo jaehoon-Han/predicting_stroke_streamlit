@@ -3,9 +3,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os
 from PIL import Image
-import pickle
 import joblib
 from run_df import run_df
 
@@ -21,7 +19,7 @@ def main() :
     df = pd.read_csv('data/stroke.csv')
     
 
-    add_selectbox = st.sidebar.title('뇌졸증 예측해보기 ‍')
+    add_selectbox = st.sidebar.title('Prediction ')
 
   
     with st.sidebar :
@@ -40,8 +38,16 @@ def main() :
         with col1 : hyper_tension = st.checkbox('고혈압',value= False)
         if hyper_tension ==True :
             hyper_tension = 1
+            st.write('----------')
         elif hyper_tension == False :
             hyper_tension = 0
+            st.write('----------')
+        
+        with col1 : ever_married = st.radio('결혼 유무',('O','X'))
+        if ever_married == 'O' : 
+            ever_married = 1
+        elif ever_married == 'X' :
+            ever_married = 0
             
 
 
@@ -50,15 +56,20 @@ def main() :
             heart_disease = 1
         elif heart_disease == False :
             heart_disease = 0
+
+        with col2 : smoked_status = st.radio('흡연 유무', ['없음','흡연 중'])
+        if smoked_status == '없음' :
+            smoked_status = 0
+        else :
+            smoked_status = 1
+
        
         
 
-        ever_married = st.radio('결혼 유무',('O','X'))
-        if ever_married == 'O' : 
-            ever_married = 1
-        elif ever_married == 'X' :
-            ever_married = 0
+        
 
+       
+        work_type = st.selectbox('근무 유형',['무직','전업주부','자영업','프리랜서','공무원'])
 
         avg_glucose_level = st.number_input('''혈당 수치를 입력해주세요.''')
         if st.checkbox('혈당수치를 모를때에는 체크',value=False)==True :
@@ -71,13 +82,11 @@ def main() :
             Height = st.slider('키',130,200,175)
             Weight = st.slider('몸무게',30,100,65)
             st.write(round((Weight)/(Height/100)**2,1))
+           
+        
 
 
-        smoked_status = st.selectbox('흡연 유무', ['없음','흡연 중'])
-        if smoked_status == '없음' :
-            smoked_status = 0
-        else :
-            smoked_status = 1
+       
 
         
 
@@ -91,6 +100,7 @@ def main() :
        
     y_pred = classifier.predict(X)
     with st.sidebar :
+        st.write('----------')
         if st.button('예측 실행') :
             if y_pred == 0 :
                 st.subheader('뇌졸증 안전 범위입니다.')
@@ -98,12 +108,15 @@ def main() :
             else :
                 st.subheader('뇌졸증 위험 범위입니다')
 
+        st.write('')
+        st.write('')
+        st.write('')
         st.write('''17.3 License
         Data files © Original Authors   👨‍⚕FEDESORIANO 
        ''')
   ######### 본문 내용 #######
     
-    st.title('EDA + Prediction ')
+    st.title('EDA + Visualization ')
     st.image('https://healthjournal.uconn.edu/wp-content/uploads/sites/1391/2017/10/featured_brain.jpg')
     with st.container() :
         st.write('세계보건기구(WHO)에 따르면 뇌졸중은 전 세계 사망 원인 2위이며, 전체 사망의 약 11%를 차지한다.\n이 데이터는 성별, 나이, 다양한 질병 및 흡연 상태와 같은 변수를 기반으로 환자가 뇌졸중에 걸릴 가능성을 예측하는 데 사용됩니다.\n데이터의 각 행은 환자에 대한 관련 정보를 제공하며 뇌졸중을 예측하기 위한 총 11개의 임상 기능이 있습니다.')
@@ -111,9 +124,9 @@ def main() :
         with col3 :
             st.write('👨‍⚕   5110 patient')
         with col4 :
-            st.write('📌   12 Comparison target')
+            st.write('📊   9 Comparison target')
         with col5 :
-            st.write('📊   3  chart')
+            st.write('📌   94.5 accuracy score')
     
     
 

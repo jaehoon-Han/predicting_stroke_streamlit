@@ -2,26 +2,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 import streamlit as st
-# basic libraries
-import os
+
 import numpy as np
 import pandas as pd
-import re
-import string
-from collections import Counter
-import time
-
-#visulaization modules
-import missingno as msno
-import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly.express as px
-import plotly.graph_objs as go
-from plotly.offline import iplot, init_notebook_mode
-from pywaffle import Waffle
-
-init_notebook_mode(connected= True)
 
 
 
@@ -30,11 +15,6 @@ init_notebook_mode(connected= True)
 from sklearn.preprocessing import (StandardScaler,
                                    LabelEncoder,
                                    OneHotEncoder)
-from sklearn import metrics
-
-
-
-import pylab as pl
 
 
 
@@ -82,7 +62,7 @@ def run_df() :
     ax0.set_yticklabels([])
     ax0.tick_params(left=False, bottom=False)
 
-    # performance of each field Count
+    ###
     '','', '', '', '', 'Residence_type', 'smoking_status'
 
     ax1.grid(color='#ffffff', linestyle=':', axis='y', zorder=0,  dashes=(1,5))
@@ -155,15 +135,16 @@ def run_df() :
     ax7.spines["right"].set_visible(False)
     st.pyplot(fig)
     #st.write('''EDA의 통찰력:
-#다른 성별 유형에서 뇌졸중 환자가 한 명도 없는 반면, 여성과 남성 모두 뇌졸중 환자 수가 같다. \n
-#개인 직업을 가진 환자는 자영업자 및 정부 직업보다 더 많은 수의 뇌졸중 환자가 있다. \n
-#소아와 실업자에게서 뇌졸중 발병 사례가 거의 없다. \n
-#도시와 시골 모두 뇌졸중 발병 건수가 같다.따라서 이것은 유용한 기능이 아닙니다. \n
-#뇌졸중은 나이와 가장 높은 상관관계를 보입니다 \n 
-#나이는 고혈압과 가장 높은 상관관계를 가지고 있다. \n 
-#사람들이 나이가 들면서 뇌졸중 발병 위험이 증가하고 있는데, 이것은 대부분의 환자들이 그들의 나이가 더 많다는 것을 의미하는 60-80세 그룹에 속한다는 것을 의미한다. \n
-#뇌졸중 환자의 avg_glucose_level이 120보다 높습니다. \n 
-#보통 담배를 피우는 사람은 뇌졸중에 걸릴 확률이 더 높지만, 우리의 데이터 세트에서 흡연은 뇌졸중에 큰 영향을 미치지 않는다.''')
+        #다른 성별 유형에서 뇌졸중 환자가 한 명도 없는 반면, 여성과 남성 모두 뇌졸중 환자 수가 같다. \n
+        #개인 직업을 가진 환자는 자영업자 및 정부 직업보다 더 많은 수의 뇌졸중 환자가 있다. \n
+        #소아와 실업자에게서 뇌졸중 발병 사례가 거의 없다. \n
+        #도시와 시골 모두 뇌졸중 발병 건수가 같다.따라서 이것은 유용한 기능이 아닙니다. \n
+        #뇌졸중은 나이와 가장 높은 상관관계를 보입니다 \n 
+        #나이는 고혈압과 가장 높은 상관관계를 가지고 있다. \n 
+        #사람들이 나이가 들면서 뇌졸중 발병 위험이 증가하고 있는데, 이것은 대부분의 환자들이 그들의 나이가 더 많다는 것을 의미하는 60-80세 그룹에 속한다는 것을 의미한다. \n
+        #뇌졸중 환자의 avg_glucose_level이 120보다 높습니다. \n 
+        #보통 담배를 피우는 사람은 뇌졸중에 걸릴 확률이 더 높지만, 우리의 데이터 세트에서 흡연은 뇌졸중에 큰 영향을 미치지 않는다.''')
+
 ######################### 2번째 차트 ###########################
     with st.expander('📈유의미한 수치를 나타내는 차트') :
         fig2 = plt.figure(figsize=(18,18))
