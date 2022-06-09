@@ -25,7 +25,8 @@
     - 서버환경 : Python 3.7.13
     - 개발툴 : vscode, jupyter notebook
     - 협업툴 : Git, putty, streamlit
-    - 
+    
+    
 -  사용된 라이브러리 
     - pandas
     - streamlit
