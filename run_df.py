@@ -8,9 +8,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
-
-
 #Common model helpers
 from sklearn.preprocessing import (StandardScaler,
                                    LabelEncoder,
@@ -60,6 +57,8 @@ def run_df() :
 
     ax0.set_xticklabels([])
     ax0.set_yticklabels([])
+    plt.rcParams['xtick.color'] = COLOR
+    plt.rcParams['ytick.color'] = COLOR
     ax0.tick_params(left=False, bottom=False)
 
     ###
