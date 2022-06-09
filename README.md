@@ -12,11 +12,11 @@
     - 구현 내용
         - EDA
             - Jupyter Notebook을 이용하여 데이터 특성 분석
-            - 데이터의 시각화
         - Data Processing
             - 문자와 숫자값을 preprocessing 하여 인공지능에 활용할수 있게끔 가공
         - Classifier 모델을 사용하여 인공지능 생성
             - 모델 중 정확도가 가장 높게 평가된 모델을 사용( GaussianNB )
+        - 데이터의 시각화
         
     - 사전 구축된 대규모 데이터를 이용해 인공지능 활용
         
