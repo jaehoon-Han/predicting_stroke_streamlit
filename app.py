@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 import joblib
@@ -9,7 +9,7 @@ from run_df import run_df
 
 #차트 한글 깨짐 현상
 import matplotlib.font_manager as fm
-plt.rcParams['font.family'] = 'Malgun Gothic'
+# plt.rcParams['font.family'] = 'Malgun Gothic'
 st.set_page_config(layout="wide")
 
 base="dark"
