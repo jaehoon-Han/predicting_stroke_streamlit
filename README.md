@@ -78,7 +78,7 @@
 
 
 ### ○  URL 주소
-http://ec2-3-35-49-86.ap-northeast-2.compute.amazonaws.com:8503/
+http://ec2-54-180-80-170.ap-northeast-2.compute.amazonaws.com:8503/
 
 ### ○ DataSet 출처
 Stroke Prediction Dataset
